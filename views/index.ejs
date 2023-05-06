@@ -83,77 +83,7 @@
   </head>
   <body class="stretched">
     <div id="wrapper" class="clearfix">
-      <header
-        id="header"
-        class="transparent-header dark full-header"
-        data-sticky-class="not-dark"
-        data-responsive-class="not-dark"
-        data-sticky-offset="full"
-      >
-        <div id="header-wrap">
-          <div class="container clearfix">
-            <div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
-
-            <div id="logo">
-              <!-- <a
-                href="https://themes.semicolonweb.com/html/canvas/v5/index.html"
-                class="standard-logo"
-                data-dark-logo="https://themes.semicolonweb.com/html/canvas/v5/demos/business/images/logo-dark.png"
-                ><img
-                  src="https://themes.semicolonweb.com/html/canvas/v5/demos/business/images/logo.png"
-                  alt="Canvas Logo"
-              /></a> -->
-              <!-- <a
-                href="https://themes.semicolonweb.com/html/canvas/v5/index.html"
-                class="retina-logo"
-                data-dark-logo="demos/business/images/logo-dark@2x.png"
-                ><img
-                  src="https://themes.semicolonweb.com/html/canvas/v5/demos/business/images/logo@2x.png"
-                  alt="Canvas Logo"
-              /></a> -->
-              LOGO
-            </div>
-
-            <nav id="primary-menu" class="not-dark">
-              <ul>
-                <li class="active">
-                  <a href="#"><div>Home</div></a>
-                </li>
-                <li>
-                  <a href="#"><div>Files</div></a>
-                </li>
-                <li>
-                  <a href="#"><div>About Us</div></a>
-                </li>
-                <li>
-                  <a href="#"><div>Contact</div></a>
-                </li>
-                <li>
-                  <a href="#"><div>Login</div></a>
-                </li>
-              </ul>
-
-              <!-- <div id="top-search">
-                <a href="#" id="top-search-trigger"
-                  ><i class="icon-search3"></i><i class="icon-line-cross"></i
-                ></a>
-                <form
-                  action="https://themes.semicolonweb.com/html/canvas/v5/search.html"
-                  method="get"
-                >
-                  <input
-                    type="text"
-                    name="q"
-                    class="form-control"
-                    value=""
-                    placeholder="Type &amp; Hit Enter.."
-                  />
-                </form>
-              </div> -->
-            </nav>
-          </div>
-        </div>
-      </header>
+      <%- include('header'); -%>
 
       <section
         id="slider"
@@ -764,7 +694,7 @@
                 </div>
               </div> -->
             </div>
-          </div> -->
+          </div> 
 
           <!-- <div
             class="section parallax topmargin-lg nobottommargin notopborder clearfix"

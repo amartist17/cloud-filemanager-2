@@ -13,5 +13,8 @@ app.use(express.static(path.join(__dirname, "static")));
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("/files", (req, res) => {
+  res.render("files");
+});
 
 module.exports = app;

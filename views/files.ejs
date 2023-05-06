@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="SemiColonWeb" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700|Open+Sans:300,400,600,700,800,900"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/bootstrap.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/style.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/dark.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/swiper.css"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/demos/business/business.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/demos/business/css/fonts.css"
+      type="text/css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/font-icons.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/animate.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/magnific-popup.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/one-page/css/et-line.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/css/responsive.css"
+      type="text/css"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="https://themes.semicolonweb.com/html/canvas/v5/demos/business/css/colors.css"
+      type="text/css"
+    />
+    <style>
+      .fbox-icon>a>i{
+        color:black !important;
+      }
+    </style>
+    <title>File Manager</title>
+    <style>
+        .timeline-steps {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap
+}
+        .timeline-steps .timeline-step {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 1rem
+}
+
+@media (min-width:768px) {
+    .timeline-steps .timeline-step:not(:last-child):after {
+        content: "";
+        display: block;
+        border-top: .25rem dotted #3b82f6;
+        width: 3.46rem;
+        position: absolute;
+        left: 7.5rem;
+        top: .3125rem
+    }
+    .timeline-steps .timeline-step:not(:first-child):before {
+        content: "";
+        display: block;
+        border-top: .25rem dotted #3b82f6;
+        width: 3.8125rem;
+        position: absolute;
+        right: 7.5rem;
+        top: .3125rem
+    }
+}
+
+.timeline-steps .timeline-content {
+    width: 10rem;
+    text-align: center
+}
+
+.timeline-steps .timeline-content .inner-circle {
+    border-radius: 1.5rem;
+    height: 1rem;
+    width: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b82f6
+}
+
+.timeline-steps .timeline-content .inner-circle:before {
+    content: "";
+    background-color: #3b82f6;
+    display: inline-block;
+    height: 3rem;
+    width: 3rem;
+    min-width: 3rem;
+    border-radius: 6.25rem;
+    opacity: .5
+}
+    </style>
+  </head>
+  <body class="stretched">
+    <div id="wrapper" class="clearfix">
+        <%- include('header'); -%>
+
+        <div class="container" style="margin-top: 10%">                      
+            <div class="row">
+                <div class="col">
+                    <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+                        <div class="timeline-step">
+                            <div class="timeline-content" data-toggle="popover" animation="false"  data-html="true"  data-trigger="hover focus" data-placement="top" title="<b>Files</b>"  data-content='<div class="list-group">
+                                
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                              </div>'>
+                                <div class="inner-circle"></div>
+                                <p class="h6 mt-3 mb-1">12 July</p>
+                                <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-content" data-toggle="popover" animation="false"  data-html="true"  data-trigger="hover focus" data-placement="top" title="<b>Files</b>"  data-content='<div class="list-group">
+                                
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                              </div>'>
+                                <div class="inner-circle"></div>
+                                <p class="h6 mt-3 mb-1">12 July</p>
+                                <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-content" data-toggle="popover" animation="false"  data-html="true"  data-trigger="hover focus" data-placement="top" title="<b>Files</b>"  data-content='<div class="list-group">
+                                
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                              </div>'>
+                                <div class="inner-circle"></div>
+                                <p class="h6 mt-3 mb-1">12 July</p>
+                                <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-content" data-toggle="popover" animation="false"  data-html="true"  data-trigger="hover focus" data-placement="top" title="<b>Files</b>"  data-content='<div class="list-group">
+                                
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                              </div>'>
+                                <div class="inner-circle"></div>
+                                <p class="h6 mt-3 mb-1">12 July</p>
+                                <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                            </div>
+                        </div>
+                        <div class="timeline-step">
+                            <div class="timeline-content" data-toggle="popover" animation="false"  data-html="true"  data-trigger="hover focus" data-placement="top" title="<b>Files</b>"  data-content='<div class="list-group">
+                                
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                                <a href="#" class="list-group-item list-group-item-action">doc.jpg</a>
+                              </div>'>
+                                <div class="inner-circle"></div>
+                                <p class="h6 mt-3 mb-1">12 July</p>
+                                <p class="h6 text-muted mb-0 mb-lg-0">Favland Founded</p>
+                            </div>
+                        </div>
+                       
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   
+      </section>
+
+      <footer id="footer" class="dark" style="margin-top: 64px !important;">
+        <div id="copyrights">
+          <div class="container clearfix">
+            <div class="col_half">
+              <img
+                src="https://themes.semicolonweb.com/html/canvas/v5/images/footer-logo.png"
+                alt=""
+                class="footer-logo"
+              />
+              Copyrights &copy; 2023 All Rights Reserved by LOGO.
+            </div>
+            <div class="col_half col_last tright">
+              <div class="copyrights-menu copyright-links fright clearfix">
+                <a href="#">Home</a>/<a href="#">Files</a>/<a href="#"
+                  >About</a
+                >/<a href="#">Login</a>/<a href="#"
+                  >Contact</a
+                >
+              </div>
+              <div class="fright clearfix">
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-facebook"
+                >
+                  <i class="icon-facebook"></i>
+                  <i class="icon-facebook"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-twitter"
+                >
+                  <i class="icon-twitter"></i>
+                  <i class="icon-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-gplus"
+                >
+                  <i class="icon-gplus"></i>
+                  <i class="icon-gplus"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-pinterest"
+                >
+                  <i class="icon-pinterest"></i>
+                  <i class="icon-pinterest"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-vimeo"
+                >
+                  <i class="icon-vimeo"></i>
+                  <i class="icon-vimeo"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-github"
+                >
+                  <i class="icon-github"></i>
+                  <i class="icon-github"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-yahoo"
+                >
+                  <i class="icon-yahoo"></i>
+                  <i class="icon-yahoo"></i>
+                </a>
+                <a
+                  href="#"
+                  class="social-icon si-small si-borderless nobottommargin si-linkedin"
+                >
+                  <i class="icon-linkedin"></i>
+                  <i class="icon-linkedin"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div id="gotoTop" class="icon-angle-up"></div>
+
+    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/jquery.js"></script>
+    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/plugins.js"></script>
+
+    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/functions.js"></script>
+  <script>
+
+$('.timeline-content').popover({
+        html: true,
+        trigger: 'manual',
+      
+    }).on("mouseenter", function () {
+        var _this = this;
+        $(this).popover("show");
+        $(this).siblings(".popover").on("mouseleave", function () {
+            $(_this).popover('hide');
+        });
+    }).on("mouseleave", function () {
+        var _this = this;
+        setTimeout(function () {
+            if (!$(".popover:hover").length) {
+                $(_this).popover("hide")
+            }
+        }, 100);
+    });
+
+     
+    </script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+      integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+      data-cf-beacon='{"rayId":"796ef4a3de6a963e","token":"0627f0b8b73941069bc19139e63db853","version":"2022.11.3","si":100}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
