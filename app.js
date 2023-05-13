@@ -16,5 +16,11 @@ app.get("/", (req, res) => {
 app.get("/files", (req, res) => {
   res.render("files");
 });
+app.get("/contact", (req, res) => {
+  res.render("contact");
+});
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
 module.exports = app;
