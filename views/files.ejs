@@ -77,70 +77,58 @@
       href="https://themes.semicolonweb.com/html/canvas/v5/demos/business/css/colors.css"
       type="text/css"
     />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/timeline.css">
     <style>
       .fbox-icon>a>i{
         color:black !important;
       }
     </style>
     <title>File Manager</title>
-    <style>
-      .timeline {
-  display: flex;
-  padding: 10% 7%;
-  align-items: center;
-  justify-content: center;
-}
-.timeline .node {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 2px solid black;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 6px;
-  background-color: white;
-  transition: all 0.5s ease-in-out;
-  z-index: 1;
-}
-.timeline .node:hover {
-  transform: scale(1.2);
-}
-.timeline .node:hover i {
-  transform: translateY(-6px);
-  transform: scale(1.2);
-}
-.timeline .node i {
-  font-size: 24px;
-  transition: all 0.5s ease-in-out;
-  color: black;
-}
-.timeline .line {
-  width: 60px;
-  height: 3px !important;
-  background-color: black;
-}
-    </style>
+    
   </head>
   <body class="stretched">
     <div id="wrapper" class="clearfix">
         <%- include('header'); -%>
 
         <div class="timeline">
-          <div class="node"><i class="far fa-file"></i></div>
+          <button class="next">Newer</button>
+          <div class="timeline-slider">
+          <div class="item">
+            <div class="node"><i class="far fa-file"></i></div>
           <div class="line"></div>
-          <div class="node"><i class="far fa-file"></i></div>
           <div class="line"></div>
-          <div class="node"><i class="far fa-file"></i></div>
-          <div class="line"></div>
-          <div class="node"><i class="far fa-file"></i></div>
-          <div class="line"></div>
-          <div class="node"><i class="far fa-file"></i></div>
-          <div class="line"></div>
-          <div class="node"><i class="far fa-file"></i></div>
+
         </div>
-   
+        <div class="item">
+            <div class="node"><i class="far fa-file"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="item">
+            <div class="node"><i class="far fa-file"></i></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="item">
+            <div class="node"><i class="far fa-file"></i></div>
+          <div class="line"></div>
+        </div>
+        <div class="item">
+          <div class="node"><i class="far fa-file"></i></div>
+          <div class="line"></div>
+
+          <div class="line"></div>
+      </div>
+      <div class="item">
+        <div class="node"><i class="far fa-file"></i></div>
+      <div class="line"></div>
+    </div>
+
+          </div>
+          <button class="prev">Older</button>
+   </div>
       </section>
 
       <footer id="footer" class="dark" style="margin-top: 64px !important;">
@@ -227,12 +215,12 @@
     </div>
 
     <div id="gotoTop" class="icon-angle-up"></div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://themes.semicolonweb.com/html/canvas/v5/js/jquery.js"></script>
     <script src="https://themes.semicolonweb.com/html/canvas/v5/js/plugins.js"></script>
 
     <script src="https://themes.semicolonweb.com/html/canvas/v5/js/functions.js"></script>
-  <script>
+  <!-- <script>
 
 $('.timeline-content').popover({
         html: true,
@@ -255,12 +243,33 @@ $('.timeline-content').popover({
 
      
     </script>
-    <script
+    -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+<script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
       integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
       data-cf-beacon='{"rayId":"796ef4a3de6a963e","token":"0627f0b8b73941069bc19139e63db853","version":"2022.11.3","si":100}'
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function() {
+        let prev=0
+      let next = 0
+      let pos= 0
+      $('.prev').click(function () {
+        prev+=1
+        pos-=50
+        // console.log(pos)
+        $(".item").css('transform', 'translate('+ pos +'px, 0)')
+      })
+      $('.next').click(function () {
+        next+=1
+        pos+=50
+        $(".item").css('transform', 'translate('+ pos +'px, 0)')
+      })
+});
+    </script>
+   
   </body>
 </html>
