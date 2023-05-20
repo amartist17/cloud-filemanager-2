@@ -5,20 +5,21 @@
   justify-content: space-between;
   position: relative;
 }
-.timeline .prev {
-  left: 5%;
-}
 .timeline .next {
-  right: 5%;
+  margin-left: 40px;
+}
+.timeline .prev {
+  margin-right: 40px;
 }
 .timeline .timeline-slider {
   display: flex;
   padding: 3% 7%;
   align-items: center;
   justify-content: flex-start;
-  background-color: beige;
+  background-color: #E3F4F4;
+  border-radius: 20px;
   width: 50%;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .timeline .item {
   display: flex;
@@ -29,7 +30,7 @@
   width: 12px !important;
   height: 12px !important;
   border-radius: 50%;
-  border: 2px solid black;
+  border: 0.1px solid black;
   position: relative;
   display: flex;
   justify-content: center;
@@ -47,6 +48,19 @@
   transform: scale(0.2);
   opacity: 1;
   font-size: 1.5rem;
+}
+.timeline .node:hover .date {
+  opacity: 0;
+}
+.timeline .node .date {
+  font-size: 14px;
+  position: absolute;
+  bottom: 0;
+  transform: translate(-35%, 120%);
+  width: 90px;
+  font-weight: 600;
+  left: 50%;
+  transition: 500ms;
 }
 .timeline .node i {
   font-size: 1.5rem;

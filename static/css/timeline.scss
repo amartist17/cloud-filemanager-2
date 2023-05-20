@@ -4,15 +4,12 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    button{
-        // position: absolute;
-        // top: 50%;
+  
+    .next{
+        margin-left: 40px;
     }
     .prev{
-        left: 5%;
-    }
-    .next{
-        right: 5%;
+      margin-right: 40px;
     }
 
   .timeline-slider{
@@ -20,9 +17,10 @@
     padding: 3% 7%;
     align-items: center;
     justify-content: flex-start;
-    background-color: beige;
+    background-color: #E3F4F4;
+    border-radius: 20px;
     width: 50%;
-    overflow-x: hidden;
+    overflow: hidden;
    
   }
   .item{
@@ -34,7 +32,7 @@
       width: 12px !important;
       height: 12px !important;
       border-radius: 50%;
-      border:2px solid black;
+      border:0.1px solid black;
       position: relative;
       display: flex;
       justify-content: center;
@@ -53,6 +51,20 @@
         // transform: translateY(-6px);        
         opacity: 1;
         font-size: 1.5rem;
+      }
+      &:hover .date {
+        // transform: translateY(-6px);        
+        opacity: 0;
+      }
+      .date{
+        font-size: 14px;
+        position: absolute;
+        bottom: 0;
+        transform: translate(-35%,120%);
+        width: 90px;
+        font-weight: 600;
+        left: 50%;
+        transition: 500ms;
       }
   
       i {
