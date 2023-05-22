@@ -16,9 +16,8 @@
   padding: 3% 7%;
   align-items: center;
   justify-content: flex-start;
-  background-color: #E3F4F4;
   border-radius: 20px;
-  width: 50%;
+  width: 80%;
   overflow: hidden;
 }
 .timeline .item {
