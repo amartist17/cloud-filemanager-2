@@ -21,12 +21,14 @@
     border-radius: 20px;
     width: 80%;
     overflow: hidden;
+    
    
   }
   .item{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
   }
     .node {
       width: 12px !important;

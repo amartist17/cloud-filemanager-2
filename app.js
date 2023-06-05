@@ -23,4 +23,20 @@ app.get("/login", (req, res) => {
   res.render("login");
 });
 
+app.get("/folder/:id", (req, res) => {
+  res.send("file names")
+})
+
+app.get("/download/:id", (req, res) => {
+  res.send("file downloaded")
+})
+
+app.get("/dashboard", (req, res) => {
+  res.render("dashboard/dashboard");
+});
+
+// const viewRouter = require("./routes/viewRoute");
+// app.use("/", viewRouter);
+
+
 module.exports = app;
