@@ -107,6 +107,7 @@
     
   </head>
   <body class="stretched">
+  <!-- <section> -->
     <div id="wrapper" class="clearfix">
         <%- include('header'); -%>
 
@@ -114,54 +115,59 @@
           <a class="next navigation"><i class="fas fa-arrow-left"></i></a>
           <div class="timeline-slider">
           <div class="item">
-            <div class="node"><i class="far fa-file"></i>
-            <div class="date">12-12-16</div></div>
+            <div class="node" title="Description"><i class="far fa-file"></i>
+            <div class="date">12-12-16</div> </div>
           <div class="line"></div>
           <div class="line"></div>
 
         </div>
         <div class="item">
-            <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+            <div class="node" title="Description"><i class="far fa-file"></i>
+              <div class="date">12-12-16</div>
+            </div>
           <div class="line"></div>
         </div>
         <div class="item">
-            <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+            <div class="node" title="Description"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
             <div class="line"></div>
             <div class="line"></div>
         </div>
         <div class="item">
-            <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+            <div class="node" title="Description"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
           <div class="line"></div>
         </div>
         <div class="item">
-          <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+          <div class="node" title="Description"> <i class="far fa-file"></i> <div class="date">12-12-16</div></div>
           <div class="line"></div>
 
           <div class="line"></div>
       </div>
       <div class="item">
-        <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+        <div class="node" title="Description"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
       <div class="line"></div>
     </div>
     <div class="item">
-      <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+      <div class="node" title="Description"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
     <div class="line"></div>
   </div>
   <div class="item">
-    <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+    <div class="node" title="Description"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
   <div class="line"></div>
   <div class="line"></div>
 </div>
 <div class="item">
-  <div class="node"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
+  <div class="node" title="Description"><i class="far fa-file"></i> <div class="date">12-12-16</div></div>
 <div class="line"></div>
 </div>
 
           </div>
           <a class="prev navigation"><i class="fas fa-arrow-right"></i></a>
    </div>
-      </section>
-
+      <!-- </section> -->
+      <div class="description">
+        <h1>Description</h1>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, alias earum. Alias!
+      </div>
       <%- include('footer'); -%>
 
     </div>
@@ -211,7 +217,7 @@ $('.timeline-content').popover({
       let pos= 0
       $('.prev').click(function () {
         prev+=1
-        pos-=50
+        pos-=100
         // console.log(pos)
         $(".item").css('transform', 'translate('+ pos +'px, 0)')
       })

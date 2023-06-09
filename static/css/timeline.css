@@ -1,6 +1,6 @@
 .timeline {
   display: flex;
-  padding: 10% 7%;
+  padding: 8% 7% 4%;
   align-items: center;
   justify-content: space-between;
   position: relative;
@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: 0.5s;
+  transition: 0.3s;
 }
 .timeline .node {
   width: 12px !important;
@@ -52,6 +52,9 @@
 .timeline .node:hover .date {
   opacity: 0;
 }
+.timeline .node:hover *.description {
+  opacity: 1;
+}
 .timeline .node .date {
   font-size: 14px;
   position: absolute;
@@ -71,4 +74,24 @@
   width: 80px !important;
   height: 3px;
   background-color: black;
+}
+
+.node:hover .description {
+  opacity: 1;
+}
+
+.description {
+  padding: 1% 7% 2%;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: cadetblue;
+  margin-bottom: 16px;
+  border-radius: 12px;
+  transition: 0.3s;
+  opacity: 0;
+}
+.description h1 {
+  margin: 8px;
+  font-size: 28px;
 }/*# sourceMappingURL=timeline.css.map */

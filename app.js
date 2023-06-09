@@ -32,7 +32,13 @@ app.get("/download/:id", (req, res) => {
 })
 
 app.get("/dashboard", (req, res) => {
-  res.render("dashboard/dashboard");
+  res.render("dashboard/add-file");
+});
+app.get("/dashboard/add-user", (req, res) => {
+  res.render("dashboard/add-user");
+});
+app.get("/dashboard/add-folder", (req, res) => {
+  res.render("dashboard/add-folder");
 });
 
 // const viewRouter = require("./routes/viewRoute");
