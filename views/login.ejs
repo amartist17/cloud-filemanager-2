@@ -89,33 +89,20 @@
 
               <form
                 class="nobottommargin"
-                id="template-contactform"
-                name="template-contactform"
-                action=""
-                method="post"
+                action="/api/login"
+                method="POST"
+                enctype="application/x-www-form-urlencoded"
               >
-                <!-- <div class="col_full">
-                  <label for="template-contactform-name"
-                    >Name <small>*</small></label
+               <div class="col_full">
+                  <label for="template-contactform-email"
+                    >Username <small>*</small></label
                   >
                   <input
                     type="text"
-                    id="template-contactform-name"
-                    name="template-contactform-name"
-                    value=""
-                    class="sm-form-control required"
-                  />
-                </div> -->
-                <div class="col_full">
-                  <label for="template-contactform-email"
-                    >Email <small>*</small></label
-                  >
-                  <input
-                    type="email"
                     id="template-contactform-email"
-                    name="template-contactform-email"
+                    name="username"
                     value=""
-                    class="required email sm-form-control"
+                    class="required  sm-form-control"
                   />
                 </div>
                 <div class="clear"></div>
@@ -128,38 +115,23 @@
                   <input
                     type="password"
                     id="template-contactform-subject"
-                    name="subject"
-                    value=""
+                    name="password"
+                    
                     class="required sm-form-control"
                   />
                 </div>
 
-                <div class="col_full hidden">
-                  <input
-                    type="text"
-                    id="template-contactform-botcheck"
-                    name="template-contactform-botcheck"
-                    value=""
-                    class="sm-form-control"
-                  />
-                </div>
+              
                 <div class="col_full">
                   <button
                     style="background-color: black !important"
                     class="button button-3d nomargin"
                     type="submit"
-                    id="template-contactform-submit"
-                    name="template-contactform-submit"
-                    value="submit"
                   >
                     Login
                   </button>
                 </div>
-                <input
-                  type="hidden"
-                  name="prefix"
-                  value="template-contactform-"
-                />
+                
               </form>
             </div>
           </div>
@@ -178,13 +150,13 @@
       data-cfasync="false"
       src="https://themes.semicolonweb.com/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
     ></script>
-    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/jquery.js"></script>
-    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/plugins.js"></script>
+    <script src="/v5/js/jquery.js"></script>
+    <!-- <script src="/v5/js/plugins.js"></script> -->
 
-    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/functions.js"></script>
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyCzkxzbEni5vR_Ugt1De8gBzrLX3236bnA"></script>
-    <script src="https://themes.semicolonweb.com/html/canvas/v5/js/jquery.gmap.js"></script>
-    <script>
+    <script src="/v5/js/functions.js"></script>
+    <!-- <script src="https://maps.google.com/maps/api/js?key=AIzaSyCzkxzbEni5vR_Ugt1De8gBzrLX3236bnA"></script> -->
+    <!-- <script src="/v5/js/jquery.gmap.js"></script> -->
+    <!-- <script>
       $("#google-map").gMap({
         address: "Melbourne, Australia",
         maptype: "ROADMAP",
@@ -210,7 +182,7 @@
           overviewMapControl: false,
         },
       });
-    </script>
+    </script> -->
     <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
