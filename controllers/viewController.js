@@ -1,5 +1,6 @@
 const User = require("./../models/userModel");
-
+const File = require("./../models/fileModel");
+const Folder = require("./../models/folderModel");
 
 exports.home = async (req, res, next) => {
   res.status(200).render("index");
@@ -18,7 +19,10 @@ exports.login = async (req, res, next) => {
 };
 
 exports.addFile = async (req, res, next) => {
-  res.status(200).render('dashboard/add-file');
+  let folders = await Folder.find()
+  let files = await File.find().populate('folder')
+  console.log(files)
+  res.status(200).render('dashboard/add-file', {folders,files});
 };
 
 exports.addUser = async (req, res, next) => {
@@ -28,5 +32,7 @@ exports.addUser = async (req, res, next) => {
 };
 
 exports.addFolder = async (req, res, next) => {
-  res.status(200).render('dashboard/add-folder');
+  let folders = await Folder.find()
+
+  res.status(200).render('dashboard/add-folder',{folders});
 };
