@@ -9,8 +9,9 @@ router.post("/login", authController.login);
 router.post("/add-user",authController.protect,authController.restrictTo('admin'), apiController.addUser);
 router.post("/remove-user",authController.protect,authController.restrictTo('admin'), apiController.removeUser);
 router.post("/remove-file",authController.protect,authController.restrictTo('admin'), apiController.removeFile);
-router.post("/add-file", authController.protect,apiController.addFile);
-router.post("/add-folder", authController.protect,apiController.addFolder);
+router.post("/add-file", authController.protect,authController.restrictTo('admin'),apiController.addFile);
+router.post("/add-folder", authController.protect,authController.restrictTo('admin'),apiController.addFolder);
+router.get("/download/:id", authController.protect,apiController.download);
 
 
 

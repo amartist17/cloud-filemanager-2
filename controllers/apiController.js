@@ -124,3 +124,15 @@ exports.addFolder = async (req, res, next) => {
       })
     }
   };
+
+  exports.download = async (req, res, next) => {
+    try {
+      let file = await File.findById(req.params.id)
+      res.download(path.join(__dirname, "../static/files/",file.path));
+    } catch (error) {
+      console.log(error)
+      res.json({
+        error
+      })
+    }
+  };

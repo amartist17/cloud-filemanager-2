@@ -7,7 +7,15 @@ exports.home = async (req, res, next) => {
 };
 
 exports.files = async (req, res, next) => {
-  res.status(200).render("files");
+  let folders = await Folder.find({})
+
+  res.status(200).render("files", {folders});
+};
+
+exports.download = async (req, res, next) => {
+  let folders = await Folder.findById(req.params.id).populate('files')
+
+  res.status(200).render("download", {files: folders.files});
 };
 
 exports.contact = async (req, res, next) => {

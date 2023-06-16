@@ -10,6 +10,10 @@ const folderSchema = new mongoose.Schema({
     required: true,
     default: Date.now
   },
+  desc: {
+    type: String,
+    required: true
+  },
   files:  [
     {
       type: mongoose.Schema.ObjectId,

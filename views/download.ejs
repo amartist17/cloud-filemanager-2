@@ -102,6 +102,14 @@
         
         border-radius: 50%;
       }
+      .col-md-3{
+        margin: 2%  0;
+        transition: 0.4s;
+      }
+
+      .col-md-3:hover{
+        transform: scale(1.1);
+      }
     </style>
     <title>File Manager</title>
     
@@ -111,34 +119,69 @@
     <div id="wrapper" class="clearfix">
         <%- include('header'); -%>
 
-        <div class="timeline">
-          <a class="next navigation"><i class="fas fa-arrow-left"></i></a>
-          <div class="timeline-slider">
+        <div class="row" style="margin: 0% !important; margin-top: 4% !important;">
+            
+            <% files.map(file=>{ %>
+               
 
-            <% folders.map(folder=>{ %>
-
-              <div class="item">
-                <a href="/download/<%= folder._id %>">
-                <div id="<%= folder._id %>" class="node" title="<%= folder.desc %>"><i class="far fa-file"></i>
-                </a>
-                  <div class="date"><%= folder.name %><br><%= folder.dateCreated.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}) %></div> </div>
-              <div class="line"></div>
-              <div class="line"></div>
-    
+                <div class="col-md-3">
+                    <div class="card">
+                        <a style="color: black;" href="/api/download/<%= file._id %>">
+                    <div class="card-header"><%= file.name %></div>
+                    <div class="card-body">
+                    <p class="card-text"><%= file.desc %></p>
+                    
+                </div>
+                <div class="card-footer"><%= file.dateCreated.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}) %></div>
+                    </a>
             </div>
+                    </div>
 
-              <% }) %>
-          
-       
-
-          </div>
-          <a class="prev navigation"><i class="fas fa-arrow-right"></i></a>
-   </div>
-      <!-- </section> -->
-      <div class="description">
-        <h1>Description</h1>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas, alias earum. Alias!
-      </div>
+                <% }) %>
+            
+           
+             <!-- <div class="col-md-3">
+            <div class="card">
+            <div class="card-header">Card Heading without title</div>
+            <div class="card-body">
+            <p class="card-text">Description</p>
+            
+        </div>
+        <div class="card-footer">Card footer</div>
+            </div>
+            </div>
+             <div class="col-md-3">
+            <div class="card">
+            <div class="card-header">Card Heading without title</div>
+            <div class="card-body">
+            <p class="card-text">Description</p>
+            
+        </div>
+        <div class="card-footer">Card footer</div>
+            </div>
+            </div>
+             <div class="col-md-3">
+            <div class="card">
+            <div class="card-header">Card Heading without title</div>
+            <div class="card-body">
+            <p class="card-text">Description</p>
+            
+        </div>
+        <div class="card-footer">Card footer</div>
+            </div>
+            </div>
+             <div class="col-md-3">
+            <div class="card">
+            <div class="card-header">Card Heading without title</div>
+            <div class="card-body">
+            <p class="card-text">Description</p>
+            
+        </div>
+        <div class="card-footer">Card footer</div>
+            </div>
+            </div> -->
+            
+            </div>
       <%- include('footer'); -%>
 
     </div>
@@ -181,7 +224,7 @@ $('.timeline-content').popover({
       data-cf-beacon='{"rayId":"796ef4a3de6a963e","token":"0627f0b8b73941069bc19139e63db853","version":"2022.11.3","si":100}'
       crossorigin="anonymous"
     ></script>
-    <script>
+    <!-- <script>
       $(document).ready(function() {
         let prev=0
       let next = 0
@@ -198,7 +241,7 @@ $('.timeline-content').popover({
         $(".item").css('transform', 'translate('+ pos +'px, 0)')
       })
 });
-    </script>
+    </script> -->
    
   </body>
 </html>

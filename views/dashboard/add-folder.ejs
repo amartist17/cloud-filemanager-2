@@ -170,6 +170,18 @@
                           <label for="tb-fname">Folder Name</label>
                         </div>
                       </div>
+                      <div class="col-md-6">
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="tb-fname"
+                            placeholder="Description"
+                            name="desc"
+                          />
+                          <label for="tb-fname">Description</label>
+                        </div>
+                      </div>
                     
                      
                     
@@ -212,6 +224,7 @@
                           <th>Id</th>
                           <th>Name</th>
                           <th>Date</th>
+                          <th>Description</th>
                           
                       </tr>
                   </thead>
@@ -221,6 +234,7 @@
                         <td><%= folder._id %></td>
                         <td><%= folder.name  %></td>
                         <td><%= folder.dateCreated.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})  %></td>
+                        <td><%= folder.desc  %></td>
                         
                     </tr>
                       <% }) %>

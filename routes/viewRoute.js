@@ -6,6 +6,7 @@ const router = express.Router({ mergeParams: true });
 
 router.get("/", viewController.home);
 router.get("/files", authController.protect,viewController.files);
+router.get("/download/:id", authController.protect,viewController.download);
 router.get("/contact", viewController.contact);
 router.get("/login", viewController.login);
 router.get("/dashboard",authController.protect,authController.restrictTo('admin'), viewController.addFile);
