@@ -13,27 +13,35 @@ const fileSchema = new mongoose.Schema({
   },
   path: {
     type: String,
-    // required: true
+  },
+  img:{
+    type: String,
   },
   folder:{
     type: mongoose.Schema.ObjectId,
       ref: "Folder",
   },
-  
-
   dateCreated: {
     type: Date,
     required: true,
     default: Date.now
   },
+  date: {
+    type: Date,
+    required: true,
+  },
 
 });
 
-// fileSchema.methods.addFile = function (folder,file) {
+fileSchema.pre("save", async function (next) {
   
-      
-      
-// };
+  this.path = this._id  + this.path
+  this.img= this._id + this.img
+
+  console.log(this.path)
+  next();
+});
+
 
 const File = mongoose.model('File', fileSchema);
 

@@ -119,7 +119,7 @@
 
               <div class="item">
                 <a href="/download/<%= folder._id %>">
-                <div id="<%= folder._id %>" class="node" title="<%= folder.desc %>"><i class="far fa-file"></i>
+                <div id="<%= folder._id %>" class="node" title="<%= folder.desc %>" style="background-image: url('/files/thumbnail/<%= folder.img%>');"><i class="far fa-file"></i>
                 </a>
                   <div class="date"><%= folder.name %><br><%= folder.dateCreated.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"}) %></div> </div>
               <div class="line"></div>

@@ -42,11 +42,14 @@
 }
 .timeline .node:hover {
   transform: scale(10);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
   background-color: white;
 }
 .timeline .node:hover i {
   transform: scale(0.2);
-  opacity: 1;
+  opacity: 0;
   font-size: 1.5rem;
 }
 .timeline .node:hover .date {
@@ -74,6 +77,9 @@
   width: 80px !important;
   height: 3px;
   background-color: black;
+}
+.item:last-child .line {
+  width: 1000vw !important;
 }
 
 .node:hover .description {

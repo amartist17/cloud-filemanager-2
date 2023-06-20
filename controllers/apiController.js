@@ -10,9 +10,28 @@ const { unlink } = require('fs');
 
 exports.addFolder = async (req, res, next) => {
     try {
+      if(req.files){
+      let img = req.files.img
+      console.log(path.extname(img.name))
+      req.body.img = path.extname(img.name)
       let newFolder = await Folder.create(req.body)
-      res.redirect("/dashboard/add-folder")
+      // let ext = path.extname(img.name)
+      img.mv( 
+        path.join(__dirname, "../static", "files","thumbnail/" + newFolder.img), 
+        async function (err){ 
+          if (err) { 
+            return res.json({
+              err
+            }); 
+          } 
+        } 
+      ); 
+      return res.redirect("/dashboard/add-folder")
+      }
+      return res.redirect("/dashboard/add-folder")
+
     } catch (error) {
+      console.log(error)
       res.json({
         error
       })
@@ -22,10 +41,12 @@ exports.addFolder = async (req, res, next) => {
 
   exports.addUser = async (req, res, next) => {
     try {
+      console.log(req.body)
         const newUser = await User.create({
             name: req.body.name,
             username: req.body.username,
             password: req.body.password,
+            role: req.body.role
           //   passwordConfirm: req.body.passwordConfirm,
           });
         res.redirect("/dashboard/add-user")
@@ -66,27 +87,39 @@ exports.addFolder = async (req, res, next) => {
       // newFile.addFile(req.body.folder,req.files.file)
       if(req.files){
         let file = req.files.file
-      let filename = req.body.name; 
-      req.body.path= filename+ path.extname(file.name)
+        let img = req.files.img
+      // let filename = req.body.name; 
+      req.body.path= path.extname(file.name)
+      req.body.img= path.extname(img.name)
 
       //create file
       const newFile = await File.create(req.body)
 
       //move file
-      file.mv( 
-          path.join(__dirname, "../static", "files/" + req.body.path), 
-          async function (err){ 
-            if (err) { 
-              return res.status(500).json({
-                err
-              }); 
-            } 
+      img.mv( 
+        path.join(__dirname, "../static", "files","thumbnail/" + newFile.img), 
+        async function (err){ 
+          if (err) { 
+            return res.json({
+              err
+            }); 
           } 
-        ); 
-      
+        } 
+      ); 
+      file.mv( 
+        path.join(__dirname, "../static", "files/" + newFile.path), 
+        async function (err){ 
+          if (err) { 
+            return res.json({
+              err
+            }); 
+          } 
+        } 
+      ); 
+    
       //push file in folder
         await Folder.findByIdAndUpdate(req.body.folder,
-          { $push: { files: newFile }}          )
+          { $push: { files: newFile }})
         res.redirect("/dashboard")
       }
       // console.log(req.files)
@@ -103,6 +136,11 @@ exports.addFolder = async (req, res, next) => {
     try {
       let file = await File.findById(req.body.file)
       unlink('./static/files/' + file.path, (err) => {
+        if (err) throw err;
+        console.log('Deleted');
+        
+      })
+      unlink('./static/files/thumbnail/' + file.img, (err) => {
         if (err) throw err;
         console.log('Deleted');
         

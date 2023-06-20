@@ -29,18 +29,18 @@ exports.login = async (req, res, next) => {
 exports.addFile = async (req, res, next) => {
   let folders = await Folder.find()
   let files = await File.find().populate('folder')
-  console.log(files)
-  res.status(200).render('dashboard/add-file', {folders,files});
+  // console.log(files)
+  res.status(200).render('dashboard/add-file', {folders,files,user:req.user});
 };
 
 exports.addUser = async (req, res, next) => {
   const users = await User.find({role:'user'})
   
-  res.status(200).render('dashboard/add-user', {users});
+  res.status(200).render('dashboard/add-user', {users,user:req.user});
 };
 
 exports.addFolder = async (req, res, next) => {
   let folders = await Folder.find()
 
-  res.status(200).render('dashboard/add-folder',{folders});
+  res.status(200).render('dashboard/add-folder',{folders,user:req.user});
 };

@@ -64,14 +64,16 @@
                   <span class="hide-menu">Add File</span>
                 </a>
               </li> 
-              <li class="sidebar-item">
-                <a class="sidebar-link" href="/dashboard/add-user" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-user-plus"></i>
-                  </span>
-                  <span class="hide-menu">Add User</span>
-                </a>
-              </li> 
+              <% if(user.role == 'admin'){  %>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/dashboard/add-user" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Add User</span>
+                  </a>
+                </li> 
+                <% } %>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="/dashboard/add-folder" aria-expanded="false">
                   <span>
@@ -80,6 +82,7 @@
                   <span class="hide-menu">Add Folder</span>
                 </a>
               </li> 
+              <a href="/api/logout" class="btn btn-primary fs-2 fw-semibold mt-3">Logout</a>
 
             
           </nav>
@@ -194,10 +197,23 @@
                           <label for="tb-fname">Password</label>
                         </div>
                       </div>
-                     
+                      <div class="col-md-6">
                     
-                    
+                        <select
+                      class="select2 form-control"
+                      style="width: 100%; height: 48px"
+                      name="role"
+                    >
+                      <option>User Role</option>
                       
+                        <option value="sub-admin">Sub-Admin</option>
+                        <option value="user">User</option>
+                        
+                    </select>
+                        
+                        
+                      </div>
+                     
                       <div class="col-12">
                         <div class="d-md-flex align-items-center mt-3">
                          

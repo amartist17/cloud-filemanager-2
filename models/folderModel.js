@@ -14,12 +14,28 @@ const folderSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  img:{
+    type: String,
+    // required: true
+  },
   files:  [
     {
       type: mongoose.Schema.ObjectId,
       ref: "File", 
     },
   ],
+  date: {
+    type: Date,
+    required: true,
+  },
+
+});
+
+folderSchema.pre("save", async function (next) {
+  
+  this.img = this._id + this.img
+  // console.log(this.path)
+  next();
 });
 
 const Folder = mongoose.model('Folder', folderSchema);

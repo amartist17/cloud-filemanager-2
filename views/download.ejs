@@ -122,12 +122,25 @@
         <div class="row" style="margin: 0% !important; margin-top: 4% !important;">
             
             <% files.map(file=>{ %>
-               
+               <style>
+                .link{
+                  opacity: 0;
+                  transition: 0.3s;
+                }
+                .card:hover {
+                  background-image: none !important;
+                  background-color: white;
+                }
+                .card:hover .link{
+                  opacity: 1;
+                }
+                
+               </style>
 
                 <div class="col-md-3">
-                    <div class="card">
-                        <a style="color: black;" href="/api/download/<%= file._id %>">
-                    <div class="card-header"><%= file.name %></div>
+                    <div class="card" style="background-image: url('/files/thumbnail/<%=file.img%>'); background-size: cover;">
+                        <a class="link" style="color: black;" href="/api/download/<%= file._id %>">
+                    <div class="card-header" style="font-weight: 600; font-size: 24px; text-transform: capitalize;"><%= file.name %></div>
                     <div class="card-body">
                     <p class="card-text"><%= file.desc %></p>
                     

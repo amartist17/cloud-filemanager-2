@@ -64,6 +64,7 @@
                   <span class="hide-menu">Add File</span>
                 </a>
               </li> 
+              <% if(user.role == 'admin'){  %>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="/dashboard/add-user" aria-expanded="false">
                   <span>
@@ -72,6 +73,7 @@
                   <span class="hide-menu">Add User</span>
                 </a>
               </li> 
+              <% } %>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="/dashboard/add-folder" aria-expanded="false">
                   <span>
@@ -80,7 +82,7 @@
                   <span class="hide-menu">Add Folder</span>
                 </a>
               </li> 
-
+              <a href="/api/logout" class="btn btn-primary fs-2 fw-semibold mt-3">Logout</a>
             
           </nav>
           <!-- <div class="fixed-profile p-3 bg-light-secondary rounded sidebar-ad mt-3">
@@ -141,7 +143,7 @@
                   </span>
                 </div>
                 <div>
-                  <h3 class="fw-semibold">Hi, <span class="text-dark">Sir</span>
+                  <h3 class="fw-semibold">Hi, <span class="text-dark"><%= user.name %></span>
                   </h3>
                   <span>Cheers, and happy activities - <%= new Date().toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"}) 
                     %></span>
@@ -191,6 +193,8 @@
                         
                       </div>
                       <div class="col-md-6">
+                        <label class="control-label">File</label>
+
                         <input
                           class="form-control form-control-lg"
                           id="formFileLg"
@@ -199,8 +203,31 @@
                         />
                       </div>
                       <div class="col-md-6">
+                        <label class="control-label">Image</label>
+
+                        <input
+                          class="form-control form-control-lg"
+                          id="formFileLg"
+                          placeholder="Choose Image"
+                          type="file"
+                          name="img"
+                        />
+                      </div>
+                      <div class="col-md-6 mt-3">
+                        <label class="control-label">Date</label>
+
+                        <input type="date" class="form-control form-control-lg"
+                        id="formFileLg"
+                        name="date" 
+                        />
+                        
+
+                      </div>
                       
-                          
+                      <div class="col-md-6 mt-3">
+                      
+                        <label class="control-label">Enter Description</label>
+
                           <textarea class="form-control" placeholder="Short Description" name="desc" rows="4"></textarea>
                       
                       </div>
@@ -295,7 +322,8 @@
                           <th>Name</th>
                           <th>Folder Name</th>
                             <th>Description</th>
-                            <th>Date</th>
+                            <th>Dated</th>
+                            <th>Created on</th>
                             
                         </tr>
                     </thead>
@@ -305,6 +333,8 @@
                           <td><%= file.name  %></td>
                           <td><%= file.folder.name %></td>
                           <td><%= file.desc  %></td>
+                          
+                          <td><%= file.date.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})  %></td>
                           <td><%= file.dateCreated.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})  %></td>
                           
                       </tr>

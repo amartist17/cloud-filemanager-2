@@ -64,14 +64,16 @@
                   <span class="hide-menu">Add File</span>
                 </a>
               </li> 
-              <li class="sidebar-item">
-                <a class="sidebar-link" href="/dashboard/add-user" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-user-plus"></i>
-                  </span>
-                  <span class="hide-menu">Add User</span>
-                </a>
-              </li> 
+              <% if(user.role == 'admin'){  %>
+                <li class="sidebar-item">
+                  <a class="sidebar-link" href="/dashboard/add-user" aria-expanded="false">
+                    <span>
+                      <i class="ti ti-user-plus"></i>
+                    </span>
+                    <span class="hide-menu">Add User</span>
+                  </a>
+                </li> 
+                <% } %>
               <li class="sidebar-item">
                 <a class="sidebar-link" href="/dashboard/add-folder" aria-expanded="false">
                   <span>
@@ -80,6 +82,7 @@
                   <span class="hide-menu">Add Folder</span>
                 </a>
               </li> 
+              <a href="/api/logout" class="btn btn-primary fs-2 fw-semibold mt-3">Logout</a>
 
             
           </nav>
@@ -156,7 +159,7 @@
               <div class="card">
                 <div class="card-body">
                   <h5 class="mb-3">Add Folder</h5>
-                  <form action="/api/add-folder" method="POST" enctype="application/x-www-form-urlencoded">
+                  <form action="/api/add-folder" method="POST" enctype="multipart/form-data">
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-floating mb-3">
@@ -182,11 +185,28 @@
                           <label for="tb-fname">Description</label>
                         </div>
                       </div>
-                    
-                     
-                    
-                    
-                      
+                      <div class="col-md-6">
+                        <label class="control-label">Date</label>
+
+                        <input type="date" class="form-control form-control-lg"
+                        id="formFileLg"
+                        name="date" 
+                        placeholder="Date"
+                        />
+
+                      </div>
+                      <div class="col-md-6">
+                        <label class="control-label">Image</label>
+
+                        <input
+                          class="form-control form-control-lg"
+                          id="formFileLg"
+                          placeholder="Choose Image"
+                          type="file"
+                          name="img"
+                        />
+                      </div>
+
                       <div class="col-12">
                         <div class="d-md-flex align-items-center mt-3">
                          
@@ -223,8 +243,9 @@
                       <tr>
                           <th>Id</th>
                           <th>Name</th>
-                          <th>Date</th>
+                          <th>Dated</th>
                           <th>Description</th>
+                          <th>Date</th>
                           
                       </tr>
                   </thead>
@@ -233,8 +254,9 @@
                       <tr>
                         <td><%= folder._id %></td>
                         <td><%= folder.name  %></td>
-                        <td><%= folder.dateCreated.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})  %></td>
+                        <td><%= folder.date.toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})  %></td>
                         <td><%= folder.desc  %></td>
+                        <td><%= folder.dateCreated.toLocaleDateString('en-us', { weekday:"long", year:"numeric", month:"short", day:"numeric"})  %></td>
                         
                     </tr>
                       <% }) %>

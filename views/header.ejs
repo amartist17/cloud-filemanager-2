@@ -44,12 +44,20 @@
           <li>
             <a href="/contact"><div>Contact</div></a>
           </li>
+          <% if(user){ %>
           <li>
-            <a href="/login"><div>Login</div></a>
+            <a href="/api/logout"><div>Logout</div></a>
           </li>
+          <% }else {%>
+            <li>
+              <a href="/login"><div>Login</div></a>
+            </li>
+            <% } %>
+            <% if(user && user.role!= "user") {%>
           <li>
             <a href="/dashboard"><div>Dashboard</div></a>
           </li>
+          <% } %>
         </ul>
       </nav>
     </div>

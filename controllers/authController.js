@@ -112,36 +112,37 @@ exports.protect = async (req, res, next) => {
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
     if (!roles.includes(req.user.role)) {
-      return res.redirect("/")
+      console.log("Unauth", req.user.role)
+      return res.redirect("/login")
     }
     next();
   };
 };
-// exports.isLoggedIn = catchAsync(async (req, res, next) => {
-//   // 1) Token exists?
-//   if (req.cookies.jwt) {
-//     // 2)Verify token
-//     const decoded = await promisify(jwt.verify)(
-//       req.cookies.jwt,
-//       process.env.JWT_SECRET
-//     );
+exports.isLoggedIn = async (req, res, next) => {
+  // 1) Token exists?
+  if (req.cookies.jwt) {
+    // 2)Verify token
+    const decoded = await promisify(jwt.verify)(
+      req.cookies.jwt,
+      process.env.JWT_SECRET
+    );
 
-//     //   3) Check if user still exists (not deleted)
-//     const currentUser = await User.findById(decoded.id);
-//     if (!currentUser) return next();
+    //   3) Check if user still exists (not deleted)
+    const currentUser = await User.findById(decoded.id);
+    if (!currentUser) return next();
 
-//     // 4) Check if password changed
-//     // if (currentUser.passwordChangedAfter(decoded.iat)) {
-//     //   return next();
-//     // }
+    // 4) Check if password changed
+    // if (currentUser.passwordChangedAfter(decoded.iat)) {
+    //   return next();
+    // }
 
-//     // User is logged in
-//     res.locals.user = currentUser;
-//     return next();
-//   }
-//   res.locals.user = null;
-//   next();
-// });
+    // User is logged in
+    res.locals.user = currentUser;
+    return next();
+  }
+  res.locals.user = null;
+  next();
+};
 
 exports.logout = (req, res) => {
   res.cookie("jwt", "Logged Out", {
