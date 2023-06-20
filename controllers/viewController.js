@@ -28,7 +28,7 @@ exports.login = async (req, res, next) => {
 
 exports.addFile = async (req, res, next) => {
   let folders = await Folder.find()
-  let files = await File.find().populate('folder')
+  let files = await File.find().populate('folder').sort({ date: -1 })
   // console.log(files)
   res.status(200).render('dashboard/add-file', {folders,files,user:req.user});
 };
